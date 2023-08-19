@@ -152,6 +152,7 @@ intercensal_survival <- function(c1,
       # Spectrum model metadata
       load("R/modsr-vr-dhs-spectrum-25-04.RData")
       this_sex <- ifelse(sex == "f", "female", "male")
+      # create a family of hiv pattern to interpolate
       mlt_this_family_all_ages <- lapply(seq(.1,.9,.05), function(x){
         hiv_svd_comp_x <- predictNQX(this_sex, 
                                      cm = q01_q05[2], 
